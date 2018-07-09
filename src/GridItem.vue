@@ -228,6 +228,7 @@
             }
         },
         created () {
+            console.log("Test, this should appear because this is my version")
             var self = this;
 
             // Accessible refernces of functions for removing in beforeDestroy
