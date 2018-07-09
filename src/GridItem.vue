@@ -298,7 +298,8 @@
             this.margin = this.$parent.margin !== undefined ? this.$parent.margin : [10, 10];
             this.maxRows = this.$parent.maxRows;
             if(this.startDragging){
-
+                var event = new Event("dragstart")
+                this.interactObj.dispatch(event);
             }
             if (this.isDraggable === null) {
                 this.draggable = this.$parent.isDraggable;
