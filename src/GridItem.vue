@@ -11,7 +11,7 @@
 </template>
 <style>
     .vue-grid-item {
-        transition: all 200ms ease;
+        transition: all 0ms ease;
         transition-property: left, top, right;
         /* add right for rtl */
     }
@@ -111,6 +111,11 @@
              type: Number,
              required: true
              },*/
+            startDragging: {
+                type: Boolean,
+                required: false,
+                default: false
+            },
             isDraggable: {
                 type: Boolean,
                 required: false,
