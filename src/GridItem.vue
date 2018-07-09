@@ -11,7 +11,7 @@
 </template>
 <style>
     .vue-grid-item {
-        transition: all 0ms ease;
+        transition: all 200ms ease;
         transition-property: left, top, right;
         /* add right for rtl */
     }
@@ -228,7 +228,6 @@
             }
         },
         created () {
-            console.log("Test, this should appear because this is my version")
             var self = this;
 
             // Accessible refernces of functions for removing in beforeDestroy
@@ -298,6 +297,9 @@
             this.containerWidth = this.$parent.width !== null ? this.$parent.width : 100;
             this.margin = this.$parent.margin !== undefined ? this.$parent.margin : [10, 10];
             this.maxRows = this.$parent.maxRows;
+            if(this.startDragging){
+
+            }
             if (this.isDraggable === null) {
                 this.draggable = this.$parent.isDraggable;
             } else {
@@ -537,7 +539,7 @@
             },
             handleDrag(event) {
                 if (this.isResizing) return;
-
+                console.log(event)
                 const position = getControlPosition(event);
 
                 // Get the current drag point from the event. This is used as the offset.
